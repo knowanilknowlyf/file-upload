@@ -1,0 +1,32 @@
+info:
+  name: uploadFiles
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{env}}/upload"
+  body:
+    type: multipart-form
+    data:
+      - name: file
+        type: file
+        value:
+          - C:\Users\AT76873\Pictures\Screenshots\Screenshot 2023-11-10 124325.png
+      - name: files
+        type: file
+        value:
+          - C:\Users\AT76873\Pictures\Screenshots\Screenshot 2023-10-12 115610.png
+        disabled: true
+  auth: inherit
+
+runtime:
+  variables:
+    - name: env
+      value: http://localhost:3000/api/files
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

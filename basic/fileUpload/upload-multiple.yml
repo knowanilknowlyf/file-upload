@@ -1,0 +1,31 @@
+info:
+  name: upload-multiple
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{env}}/upload-multiple"
+  body:
+    type: multipart-form
+    data:
+      - name: files
+        type: file
+        value:
+          - C:\Users\AT76873\Pictures\Screenshots\Screenshot 2023-11-10 172022.png
+      - name: files
+        type: file
+        value:
+          - C:\Users\AT76873\Pictures\Screenshots\Screenshot 2023-11-10 172305.png
+  auth: inherit
+
+runtime:
+  variables:
+    - name: env
+      value: http://localhost:3000/api/files
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
