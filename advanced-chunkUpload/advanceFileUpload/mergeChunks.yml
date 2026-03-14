@@ -1,0 +1,20 @@
+info:
+  name: mergeChunks
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{env}}/upload-chunk"
+  auth: inherit
+
+runtime:
+  variables:
+    - name: env
+      value: http://localhost:3200/api/files
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -4,11 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./basic/style.css">
 </head>
 <body>
-    <button type="button" onclick="download()">
 
-    </button>
+<!-- const uploadBtn = document.getElementById("uploadBtn");
+
+const fileInput = document.getElementById("fileInput");
+
+const progressBar = document.getElementById("progressBar");
+
+const statusText = document.getElementById("status"); -->
+
+
+
+    <input type="file" id="fileInput">advance</input>
+    <button type="button" onclick="download()">download</button>
+    <button type="button" id="uploadBtn" >Upload
+</button>
+<div class="progress-container">
+    <div id="progressBar"></div>
+</div>
+<p id="status"></p>
     <script src="./basic/client.js"></script>
 </body>
 </html>
