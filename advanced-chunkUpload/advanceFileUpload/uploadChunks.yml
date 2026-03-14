@@ -1,0 +1,33 @@
+info:
+  name: uploadChunks
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{env}}/upload-chunk"
+  headers:
+    - name: fileId
+      value: test-file-123
+    - name: chunkIndex
+      value: "0"
+    - name: totalSize
+      value: "612899000"
+  body:
+    type: file
+    data:
+      - filePath: C:\Users\AT76873\Downloads\Docker Desktop Installer.exe
+        contentType: application/x-msdos-program
+        selected: true
+  auth: inherit
+
+runtime:
+  variables:
+    - name: env
+      value: http://localhost:3200/api/files
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
